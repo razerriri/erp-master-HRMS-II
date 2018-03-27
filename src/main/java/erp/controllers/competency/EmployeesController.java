@@ -23,21 +23,21 @@ public class EmployeesController {
 	EmployeesDao employeesDao;
 
 	
-	@RequestMapping(value="employee/delete/{id}/{employeeid}",method = RequestMethod.GET)
+	@RequestMapping(value="cms/employee/delete/{id}/{employeeid}",method = RequestMethod.GET)
 	public ModelAndView delete(@PathVariable int id,@PathVariable int employeeid) {
 		employeesDao.delete(id);
-		return new ModelAndView("redirect:/employee/view/"+employeeid+"");
+		return new ModelAndView("redirect:/cms/employee/view/"+employeeid+"");
 	}
-	@RequestMapping(value="employee/save", method = RequestMethod.POST)
+	@RequestMapping(value="cms/employee/save", method = RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("competency") Competency competency) {
 		employeesDao.save(competency);
-		return new ModelAndView("redirect:/employee/view/"+competency.getEmployee_id()+"");
+		return new ModelAndView("redirect:/cms/employee/view/"+competency.getEmployee_id()+"");
 	}
 	
-	@RequestMapping(value="employee/update", method = RequestMethod.POST)
+	@RequestMapping(value="cms/employee/update", method = RequestMethod.POST)
 	public ModelAndView update(@ModelAttribute("competency") Competency competency) {
 		employeesDao.update(competency);
-		return new ModelAndView("redirect:/employee/view/"+competency.getEmployee_id()+"");
+		return new ModelAndView("redirect:/cms/employee/view/"+competency.getEmployee_id()+"");
 	}
 	
 	

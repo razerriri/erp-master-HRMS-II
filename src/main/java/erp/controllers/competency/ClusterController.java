@@ -24,7 +24,7 @@ public class ClusterController {
 	@Autowired
 	CompetencyDao competencyDao;
 
-	@RequestMapping(value="cluster/view/{clusterid}",method = RequestMethod.GET)
+	@RequestMapping(value="cms/cluster/view/{clusterid}",method = RequestMethod.GET)
 	public ModelAndView getCompetency(@PathVariable int clusterid) {
 		List<Competency> competencylist = clusterDao.getCompetency(clusterid);
 		List<Competency> cluster_id = clusterDao.getClusterid(clusterid);
@@ -34,22 +34,22 @@ public class ClusterController {
 		mav.addObject("competency", new Competency());
 		return mav;
 	}
-	@RequestMapping(value="cluster/delete/{id}",method = RequestMethod.GET)
+	@RequestMapping(value="cms/cluster/delete/{id}",method = RequestMethod.GET)
 	public ModelAndView delete(@PathVariable int id) {
 		clusterDao.delete(id);
-		return new ModelAndView("redirect:/cluster");
+		return new ModelAndView("redirect:/cms/cluster");
 	}
 	
-	@RequestMapping(value="cluster/save", method = RequestMethod.POST)
+	@RequestMapping(value="cms/cluster/save", method = RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("cluster") Competency competency) {
 		clusterDao.save(competency);
-		return new ModelAndView("redirect:/cluster");
+		return new ModelAndView("redirect:/cms/cluster");
 	}
 	
 	@RequestMapping(value="cluster/update", method = RequestMethod.POST)
 	public ModelAndView update(@ModelAttribute("cluster") Competency competency) {
 		clusterDao.update(competency);
-		return new ModelAndView("redirect:/cluster");
+		return new ModelAndView("redirect:/cms/cluster");
 	}
 }
 

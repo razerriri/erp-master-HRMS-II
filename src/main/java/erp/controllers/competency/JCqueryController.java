@@ -23,7 +23,7 @@ public class JCqueryController {
 	
 	@Autowired
 	JCDao jcDao;	
-	@RequestMapping(value="jc/view/{jobid}/{empid}",method = RequestMethod.GET)
+	@RequestMapping(value="cms/jc/view/{jobid}/{empid}",method = RequestMethod.GET)
 	public ModelAndView getjobcomp(@PathVariable int jobid,@PathVariable int empid) {
 		List<Competency> employeejobcompetencylist = jcDao.getEmployeeJobCompetency(jobid,empid);
 		ModelAndView mav = new ModelAndView("competency/query/job_competency_query");

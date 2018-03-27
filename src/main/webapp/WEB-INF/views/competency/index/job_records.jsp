@@ -76,7 +76,7 @@
                                                 <td>${c.department_name}</td> 
 												<td>${c.total_competency}</td>
                                                 <td align="center">
-                                                    <a class="btn btn-md btn-info" onClick="window.location = 'job/view/'+${c.job_id};"><span class="glyphicon glyphicon-search"></span> View</a>                                              
+                                                    <a class="btn btn-md btn-info" onClick="window.location = 'cms/job/view/'+${c.job_id};"><span class="glyphicon glyphicon-search"></span> View</a>                                              
                                           	    </td>
                                             </tr>
                                         </c:forEach>

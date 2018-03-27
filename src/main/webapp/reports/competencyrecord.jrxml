@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="jobcomp" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="82ba0d81-a9e4-45be-8666-587962695e50">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CMS"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT tbl_competency_cluster.competency_cluster_name
+AS head_cluster, 
+tbl_competency.competency_name
+AS head_comp,
+tbl_competency.competency_type
+as head_type
+FROM   tbl_competency_cluster INNER JOIN
+             tbl_competency ON tbl_competency_cluster.competency_cluster_id = tbl_competency.competency_cluster_id]]>
+	</queryString>
+	<field name="head_cluster" class="java.lang.String"/>
+	<field name="head_comp" class="java.lang.String"/>
+	<field name="head_type" class="java.lang.String"/>
+	<variable name="head_comp1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{head_comp}]]></variableExpression>
+	</variable>
+	<variable name="head_cluster1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{head_cluster}]]></variableExpression>
+	</variable>
+	<background>
+		<band height="802" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="180" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="553" height="24" backcolor="#418AB3" uuid="bba04bc8-4cf3-49db-897b-6ad9bed74b50"/>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="151" width="553" height="24" forecolor="#000000" backcolor="#969696" uuid="4c6a1ca8-533b-458f-ba08-0b496bcfcbfa"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="211" y="-48" width="144" height="20" forecolor="#595959" uuid="ea4eaa20-b9fa-4c81-ab7e-c5c5a0087a3e"/>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="118" y="-98" width="415" height="29" forecolor="#418AB3" uuid="3a333ee0-f020-45e3-98c8-0e950be1c7c4"/>
+					<textElement>
+						<font fontName="Calibri" size="22" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Competency Management System]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Title" x="100" y="-68" width="370" height="20" forecolor="#575757" uuid="f155983a-49f9-496f-873b-a9b0c0ee96eb"/>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Competency Record on System]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="12" y="3" width="162" height="19" forecolor="#FFFFFF" uuid="9b20499c-e522-4397-ba51-806996034148"/>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" size="14" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Competency Cluster]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="193" y="3" width="162" height="19" forecolor="#FFFFFF" uuid="fbade328-e889-4034-85c2-00a274c51b98"/>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" size="14" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Competency]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="381" y="3" width="162" height="19" forecolor="#FFFFFF" uuid="994468bf-cd9f-45f6-9611-6199d17cb9de"/>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" size="14" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Type of competency]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="2" width="555" height="18" uuid="245cd446-f83b-43ee-853b-d0abd03bae3d"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="12" y="0" width="162" height="18" uuid="10e8fffc-c49a-404d-908f-6e203f9d0e24"/>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{head_cluster}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="193" y="0" width="162" height="18" uuid="9f9312b6-f2e5-4d12-a436-43bf825decc6"/>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{head_comp}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="381" y="0" width="168" height="18" uuid="89eb0c96-bbb9-49fe-a9de-5b8f4183fbcd">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b533a3d3-bbec-4b83-b1c3-9849605504fb"/>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{head_type}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="6fbc649f-0c8d-462f-a444-23be2306a1e9"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="0" y="-26" width="553" height="24" forecolor="#D0B48E" backcolor="#418AB3" uuid="ec5636bb-cf10-434a-8336-dc5a1f089da5"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="15c5dae4-2381-4eb5-8af1-0077604d7edd"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="05f50cb5-8c74-49a8-a307-92e03fe78495"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="dc0fcaed-984d-4183-b44b-5a064fac9ffe"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -77,7 +77,7 @@
                                                 <td>${e.department_name}</td>
                                              
                                                 <td align="center">
-                                                    <a class="btn btn-md btn-info" onClick="window.location = 'employee/view/'+${e.employee_id};"><span class="glyphicon glyphicon-search"></span> View</a>                                              
+                                                    <a class="btn btn-md btn-info" onClick="window.location = 'cms/employee/view/'+${e.employee_id};"><span class="glyphicon glyphicon-search"></span> View</a>                                              
                                           	    </td>
                                             </tr>
                                             </c:forEach>

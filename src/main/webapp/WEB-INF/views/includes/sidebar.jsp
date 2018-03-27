@@ -37,6 +37,33 @@
                            </a>
                         </li>
                         <li>
+                           <a href="">
+                           <i class="fa fa-angle-double-right"></i>
+                           <span class="title">Competencies</span>
+                           </a>
+                           <ul class="sub-menu" >
+                     	 	   <li>
+		                           <a href="/erp/cms/job">
+		                           <i class="fa fa-angle-double-right"></i>
+		                           <span class="title" style="font-size:80%;">Job Competency</span>
+		                           </a>
+                     	 	   </li>
+                     	 	   <li>
+		                           <a href="/erp/cms/cluster">
+		                           <i class="fa fa-angle-double-right"></i>
+		                           <span class="title" style="font-size:80%;">Cluster Competency</span>
+		                           </a>
+                     	 	   </li>
+                     	 	   <li>
+		                           <a href="/erp/cms/employee">
+		                           <i class="fa fa-angle-double-right"></i>
+		                           <span class="title" style="font-size:80%;">Employee Competency</span>
+		                           </a>
+                     	 	   </li>
+                           </ul>
+                        </li>
+                        
+                        <li>
                            <a href="/erp/system-setup/deductions/">
                            <i class="fa fa-angle-double-right"></i>
                            <span class="title">Deductions</span>
@@ -350,7 +377,7 @@
                      </a>
                      <ul class = "sub-menu">
                         <li>
-                           <a href="/cms">
+                           <a href="/erp/cms">
                            <i class="fa fa-angle-double-right"></i>
                            <span class="title">Competency Management</span>
                            </a>
@@ -392,13 +419,13 @@
 									</a>
 								</li>
 								<li>
-									<a href="/cms/jc">
+									<a href="/erp/cms/jc">
 									<i class="fa fa-angle-double-right"></i>
 									<span class="title" style="font-size:90%;">Job Competency</span>
 									</a>
 								</li>
 								<li>
-									<a href="/cms/ejc">
+									<a href="/erp/cms/ejc">
 									<i class="fa fa-angle-double-right"></i>
 									<span class="title" style="font-size:80%;">Employee Competency</span>
 									</a>
@@ -417,30 +444,36 @@
 									<span class="title">Performance Evaluation</span>
 									</a>
 								</li>
-								<li>
-									<a href="/cms/report/competency-record">
-									<i class="fa fa-angle-double-right"></i>
-									<span class="title" style="font-size:90%;">Competency Record</span>
-									</a>
-								</li>
-								<li>
-									<a href="/cms/report/job-competency">
-									<i class="fa fa-angle-double-right"></i>
-									<span class="title" style="font-size:90%;">Job Record</span>
-									</a>
-								</li>
-								<li>
-									<a href="/cms/report/employee-competency">
-									<i class="fa fa-angle-double-right"></i>
-									<span class="title" style="font-size:80%;">Employee Record</span>
-									</a>
-								</li>
-								<li>
-									<a href="/cms/ec-report">
-									<i class="fa fa-angle-double-right"></i>
-									<span class="title" style="font-size:70%;">Search Employee Record</span>
-									</a>
-								</li>
+								 <li>
+		                           <a href="/erp/cms/report/competency-record">
+		                           <i class="fa fa-angle-double-right"></i>
+		                           <span class="title" style="font-size:80%;">Print Competency</span>
+		                           </a>
+                     	 	   </li>
+                     	 	   <li>
+		                           <a href="/erp/cms/report/job-competency">
+		                           <i class="fa fa-angle-double-right"></i>
+		                           <span class="title" style="font-size:80%;">Print Job Competency Requirements</span>
+		                           </a>
+                     	 	   </li>
+                     	 	   <li>
+		                           <a href="/erp/cms/report/employee-competency">
+		                           <i class="fa fa-angle-double-right"></i>
+		                           <span class="title" style="font-size:80%;">Print Employee Competency</span>
+		                           </a>
+                     	 	   </li>
+                     	 	   <li>
+		                           <a href="/erp/cms/ec-report">
+		                           <i class="fa fa-angle-double-right"></i>
+		                           <span class="title" style="font-size:80%;">Match Employee Competency Status to Present Job</span>
+		                           </a>
+                     	 	   </li>
+                     	 	   <li>
+		                           <a href="/erp/cms/ejc-report">
+		                           <i class="fa fa-angle-double-right"></i>
+		                           <span class="title" style="font-size:80%;">Match Employee Competency Status to Target Job</span>
+		                           </a>
+                     	 	   </li>
                            </ul>
                         </li>
                      </ul>

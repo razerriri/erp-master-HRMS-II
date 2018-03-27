@@ -28,22 +28,22 @@ public class CCompetencyController {
 		return mav;
 	}*/
 	
-	@RequestMapping(value="competency/delete/{id}/{clusterid}",method = RequestMethod.GET)
+	@RequestMapping(value="cms/competency/delete/{id}/{clusterid}",method = RequestMethod.GET)
 	public ModelAndView delete(@PathVariable int id,@PathVariable int clusterid) {
 		competencyDao.delete(id);
-		return new ModelAndView("redirect:/cluster/view/"+clusterid+"");
+		return new ModelAndView("redirect:/cms/cluster/view/"+clusterid+"");
 	}
 	
-	@RequestMapping(value="competency/save", method = RequestMethod.POST)
+	@RequestMapping(value="cms/competency/save", method = RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("competency") Competency competency) {
 		competencyDao.save(competency);
-		return new ModelAndView("redirect:/cluster/view/"+competency.getCluster_id()+"");
+		return new ModelAndView("redirect:/cms/cluster/view/"+competency.getCluster_id()+"");
 	}
 	
-	@RequestMapping(value="competency/update", method = RequestMethod.POST)
+	@RequestMapping(value="cms/competency/update", method = RequestMethod.POST)
 	public ModelAndView update(@ModelAttribute("competency") Competency competency) {
 		competencyDao.update(competency);
-		return new ModelAndView("redirect:/cluster/view/"+competency.getCluster_id()+"");
+		return new ModelAndView("redirect:/cms/cluster/view/"+competency.getCluster_id()+"");
 	}
 	
 }

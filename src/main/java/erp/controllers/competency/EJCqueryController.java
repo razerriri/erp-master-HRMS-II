@@ -22,7 +22,7 @@ public class EJCqueryController {
 	
 	@Autowired
 	EJCDao ejcDao;	
-	@RequestMapping(value="ejc/search", method = RequestMethod.POST)
+	@RequestMapping(value="cms/ejc/search", method = RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("competency") Competency competency) {
 		List<Competency> employeejobcompetencylist = ejcDao.getEmployeeJobCompetency(competency);
 		List<Competency> employeelist = ejcDao.getEmployee();
@@ -34,11 +34,11 @@ public class EJCqueryController {
 		mav.addObject("competency", new Competency());
 		return mav;
 	}
-	@RequestMapping(value="ec-report/search", method = RequestMethod.POST)
+	@RequestMapping(value="cms/ec-report/search", method = RequestMethod.POST)
 	public ModelAndView report() {
 		return new ModelAndView("competency/report/employee_competency_param");
 	}
-	@RequestMapping(value="ejc-report/search", method = RequestMethod.POST)
+	@RequestMapping(value="cms/ejc-report/search", method = RequestMethod.POST)
 	public ModelAndView ejcreport() {
 		return new ModelAndView("report/employee_job_competency_param");
 	}
