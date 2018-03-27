@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+   <context:component-scan base-package="erp.controllers" />
+   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix">
+         <value>/WEB-INF/views/</value>
+      </property>
+      <property name="suffix">
+         <value>.jsp</value>
+      </property>
+   </bean>
+   <!-- Mapping of static files -->
+   <mvc:resources mapping="/resources/**" location="/resources/" />
+   <mvc:annotation-driven />
+   <!-- <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+      <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=ERP2;" />
+      <property name="username" value="sa" />
+      <property name="password" value="abc123!" />
+   </bean> -->
+   
+   <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+      <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=competencymanagement_db;integratedSecurity=true;" />
+   </bean>
+   
+   
+   <bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
+      <property name="dataSource" ref="ds" />
+   </bean>
+   <bean id="deptDao" class="erp.hrms.dao.DepartmentDao">
+      <property name="template" ref="jt" />
+   </bean>
+   <bean id="compTypeDao" class="erp.hrms.dao.CompensationTypeDao">
+      <property name="template" ref="jt" />
+   </bean>
+   <bean id="jobDao" class="erp.hrms.dao.JobDao">
+      <property name="template" ref="jt" />
+   </bean>
+   <bean id="salaryTypeDao" class="erp.hrms.dao.SalaryTypeDao">
+      <property name="template" ref="jt" />
+   </bean>
+   <bean id="payGradeDao" class="erp.hrms.dao.PayGradeDao">
+      <property name="template" ref="jt" />
+   </bean>
+   <bean id="employeeDao" class="erp.hrms.dao.EmployeeDao">
+      <property name="template" ref="jt" />
+   </bean>
+   <bean id="gsisDao" class="erp.hrms.dao.GsisDao">
+      <property name="template" ref="jt" />
+   </bean>
+   
+   <!-- Applicant Mgmt -->
+  	<bean id="AddAppDao" class="erp.hrms.dao.AddAppDao">
+		<property name="template" ref="jt" />
+	</bean>
+   
+   <!--Leave-->
+   <bean id="LeaveRequestDao" class="erp.hrms.dao.LeaveRequestDao">
+      <property name="template" ref="jt" />
+   </bean>
+   <bean id="LeaveSetupDao" class="erp.hrms.dao.LeaveSetupDao">
+      <property name="template" ref="jt" />
+   </bean>
+   
+   <!-- Shift and Sched -->
+   <bean id="requestDao" class="erp.hrms.dao.RequestDao">
+      <property name="template" ref="jt" />
+   </bean>
+   <bean id="ShiftDao" class="erp.hrms.dao.ShiftDao">
+      <property name="template" ref="jt" />
+   </bean>
+   	
+	<!-- Timesheet -->
+	<bean id="TimesheetApproveDao" class="erp.hrms.dao.TimesheetApproveDao">
+		<property name="template" ref="jt" />
+  	</bean>
+	<bean id="TuserDao" class="erp.hrms.dao.TuserDao">
+		<property name="template" ref="jt" />
+	</bean>
+   
+	<!--Attendance-->
+	<bean id="UserAttendanceDao" class="erp.hrms.dao.UserAttendanceDao">
+		<property name="template" ref="jt"/>
+	</bean>
+	<bean id="AttendanceDao" class="erp.hrms.dao.AttendanceDao">
+		<property name="template" ref="jt"/>
+	</bean>
+	<!--Competency-->
+	<bean id="clusterDao" class="erp.hrms.dao.competency.ClusterDao">
+      <property name="template" ref="jt" />
+   </bean>
+   <bean id="competencyDao" class="erp.hrms.dao.competency.CompetencyDao">
+      <property name="template" ref="jt" />
+   </bean>
+    <bean id="employeesDao" class="erp.hrms.dao.competency.EmployeesDao">
+      <property name="template" ref="jt" />
+   </bean>
+   <bean id="ejcDao" class="erp.hrms.dao.competency.EJCDao">
+      <property name="template" ref="jt" />
+   </bean>
+  	<bean id="jobsDao" class="erp.hrms.dao.competency.JobsDao">
+      <property name="template" ref="jt" />
+   </bean>
+   <bean id="jcDao" class="erp.hrms.dao.competency.JCDao">
+      <property name="template" ref="jt" />
+   </bean>
+</beans>
