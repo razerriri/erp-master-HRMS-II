@@ -121,7 +121,7 @@
                 </div>
 				
 				<!--- ADD MODAL -->
-				<form:form action="cms/cluster/save" modelAttribute="cluster" method="post">
+				<form:form action="cluster/save" modelAttribute="cluster" method="post">
 					<div class="modal fade in" id="modaladd" tabindex="-1" role="dialog" aria-hidden="false" style="display:none;">
 						<div class="modal-dialog modal-md-12">
 							<div class="modal-content">
@@ -151,7 +151,7 @@
 					</div>
 				</form:form>
                
-            	<form:form class="form-horizontal" method="post" action="cms/cluster/update" modelAttribute="cluster" id="updateForm">
+            	<form:form class="form-horizontal" method="post" action="cluster/update" modelAttribute="cluster" id="updateForm">
            	    <div class="modal fade in" id="modalupdate" tabindex="-1" role="dialog" aria-hidden="false" style="display:none;">
                     <div class="modal-dialog modal-md-12">
                         <div class="modal-content">
@@ -226,7 +226,7 @@
         	  var clusterid=$(opener).attr('cluster-id');
         	  
         	  document.getElementById("deletebutton").onclick = function () {
-      	    	window.location = 'cms/cluster/delete/'+clusterid;
+      	    	window.location = 'cluster/delete/'+clusterid;
       	   	  };
       	    
         	});
@@ -234,7 +234,7 @@
     <script>
          function confirmDelete(x){
          	if(confirm("Are you sure you want to delete this cluster?") == true){
-         		window.location = 'cms/cluster/delete/'+x;
+         		window.location = 'cluster/delete/'+x;
          	}
          	else{
          		

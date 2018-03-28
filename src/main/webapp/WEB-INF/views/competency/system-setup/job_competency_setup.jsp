@@ -120,7 +120,7 @@
                 </div>
 				
 				<!--- ADD MODAL -->
-            	<form:form class="form-horizontal" method="post" action="cms/competency/save" modelAttribute="competency" id="saveForm">
+            	<form:form class="form-horizontal" method="post" action="competency/save" modelAttribute="competency" id="saveForm">
                 <div class="modal fade in" id="modaladd" tabindex="-1" role="dialog" aria-hidden="false" style="display:none;">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -175,7 +175,7 @@
                 <!-- END modal-->
 			
             	<!---EDIT MODAL -->
-            	<form:form class="form-horizontal" method="post" action="cms/competency/update" modelAttribute="competency" id="updateForm">
+            	<form:form class="form-horizontal" method="post" action="competency/update" modelAttribute="competency" id="updateForm">
                 <div class="modal fade in" id="modalupdate" tabindex="-1" role="dialog" aria-hidden="false" style="display:none;">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -282,7 +282,7 @@
         	  var jobid=$(opener).attr('job-id');
         	  
         	  document.getElementById("deletebutton").onclick = function () {
-      	    	window.location = 'cms/competency/delete/'+jobcompetencyid+'/'+jobid;
+      	    	window.location = 'competency/delete/'+jobcompetencyid+'/'+jobid;
       	   	  };
       	    
         	});

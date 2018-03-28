@@ -77,7 +77,7 @@
                                                 <td>${c.employee_name}</td>
                                                 <td>${c.total_competency}</td>
                                                 <td align="center">
-                                                <a class="btn btn-md btn-info" onClick="window.location = 'cms/jc/view/'+${c.job_id}+'/'+${c.employee_id };"><span class="glyphicon glyphicon-search"></span> View</a>
+                                                <a class="btn btn-md btn-info" onClick="window.location = 'jc/view/'+${c.job_id}+'/'+${c.employee_id };"><span class="glyphicon glyphicon-search"></span> View</a>
                                                 </td>
                                                 
                                                 </tr>

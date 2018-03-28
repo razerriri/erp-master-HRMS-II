@@ -46,7 +46,7 @@ public class ClusterController {
 		return new ModelAndView("redirect:/cms/cluster");
 	}
 	
-	@RequestMapping(value="cluster/update", method = RequestMethod.POST)
+	@RequestMapping(value="cms/cluster/update", method = RequestMethod.POST)
 	public ModelAndView update(@ModelAttribute("cluster") Competency competency) {
 		clusterDao.update(competency);
 		return new ModelAndView("redirect:/cms/cluster");

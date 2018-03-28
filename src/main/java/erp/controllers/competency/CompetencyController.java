@@ -125,7 +125,7 @@ public class CompetencyController {
 		
 	}
 	
-	@RequestMapping(value= {"/ec-report"})
+	@RequestMapping(value= {"/cms/ec-report"})
 	public ModelAndView employee_competency_report() {
 		List<Competency> employeelist = ejcDao.getEmployee();
 		ModelAndView mav = new ModelAndView("competency/query/employee_competency_report");
