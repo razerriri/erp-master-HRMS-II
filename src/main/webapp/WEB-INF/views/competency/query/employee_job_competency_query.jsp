@@ -61,7 +61,7 @@
                             </div>
 							
                             <div class="portlet-body">
-                                 <form:form class="form-horizontal" method="post" action="/ejc/search" modelAttribute="competency" id="searchForm">
+                                 <form:form class="form-horizontal" method="post" action="ejc/search" modelAttribute="competency" id="searchForm">
                 
 								<div class="form-group" style="height: 100%; width:95%; overflow: auto; padding-left:65px;">
                                     <label for="single-append-text" class="control-label">

@@ -46,7 +46,7 @@
                 };
             }
 
-            if ($showDuration.val().length()) {
+            if ($showDuration.val().length) {
                 toastr.options.showDuration = $showDuration.val();
             }
 

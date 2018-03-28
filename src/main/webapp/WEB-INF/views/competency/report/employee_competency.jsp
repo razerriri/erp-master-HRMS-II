@@ -13,7 +13,7 @@
 	<% Connection conn=null;
 	try{
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-		conn=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=competencymanagement_db;integratedSecurity=true;");
+		conn=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ERP;integratedSecurity=true;");
 		
 		
 		File reportFile=new File(application.getRealPath("//reports//employeecompetency.jasper"));

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
    pageEncoding="ISO-8859-1"%>
 <header class="header">
-   <a href="/erp/" class="logo">
+   <a href="/hranalytics" class="logo">
    <img src="${pageContext.request.contextPath}/resources/img/logo-two.png" alt="Logo">
    </a>		
    <nav class="navbar navbar-static-top" role="navigation">
@@ -15,7 +15,7 @@
          <ul class="nav navbar-nav">
             <!--NAVIGATION DASHBOARD-->
             <li  class="dropdown-messages-menu" onclick="window.location.href='/erp/'">
-               <a href="/erp/" class="dropdown-toggle" data-toggle="dropdown">
+               <a href="/hranalytics" class="dropdown-toggle" data-toggle="dropdown">
                <i class="livicon" data-name="home" data-size="28" data-c="#ffffff" data-hc="#ffffff" data-loop="true" title="Human Resource"></i>
                </a>
             </li>

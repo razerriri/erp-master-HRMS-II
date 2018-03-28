@@ -61,7 +61,7 @@
                             </div>
 							
                             <div class="portlet-body">
-                                 <form:form class="form-horizontal" method="post" action="/ejc-report/search" modelAttribute="competency" id="searchForm">
+                                 <form:form class="form-horizontal" method="post" action="ejc-report/search" modelAttribute="competency" id="searchForm">
                 
 								<div class="form-group" style="height: 100%; width:95%; overflow: auto; padding-left:65px;">
 								 <br/> <br/>
