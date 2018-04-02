@@ -33,7 +33,11 @@ public class EmployeesDao {
 	}
 	
 	public List<Competency> getEmployee(){
-		return template.query("SELECT tbl_employees.emp_id, (tbl_employees.emp_last_name +' '+ tbl_employees.emp_first_name), tbl_job.job_title, tbl_departments.dept_name FROM   tbl_employees INNER JOIN tbl_job ON tbl_employees.emp_job_id = tbl_job.job_id INNER JOIN tbl_departments ON tbl_employees.emp_id = tbl_departments.dept_manager_id AND tbl_job.job_dept_id = tbl_departments.dept_id", new RowMapper<Competency>(){
+		return template.query("SELECT TBL_EMPLOYEE.EMP_ID, (TBL_EMPLOYEE.EMP_LAST_NAME +' '+ TBL_EMPLOYEE.EMP_FIRST_NAME), "
+	+ "TBL_JOB.JOB_NAME, TBL_DEPARTMENT.DEPT_NAME FROM   TBL_EMPLOYEE "
+	+ "INNER JOIN REF_EMP_JOB ON TBL_EMPLOYEE.EMP_ID =  REF_EMP_JOB.EMP_ID " 
+	+ "INNER JOIN TBL_JOB ON REF_EMP_JOB.JOB_ID = TBL_JOB.JOB_ID "
+	+ "INNER JOIN TBL_DEPARTMENT ON TBL_JOB.DEPT_ID = TBL_DEPARTMENT.DEPT_ID ", new RowMapper<Competency>(){
 			public Competency mapRow(ResultSet rs, int row)  throws SQLException{
 				Competency e = new Competency();
 				e.setEmployee_id(rs.getInt(1));
@@ -46,7 +50,14 @@ public class EmployeesDao {
 	}
 	
 	public List<Competency> getEmployeeCompetency(int employeeid){
-		return template.query("SELECT tbl_employees.emp_id, tbl_competency_cluster.competency_cluster_name, tbl_competency.competency_name, tbl_competency.competency_type, tbl_competency_status.competency_status_competency_score,tbl_competency_status.competency_status_id,CONVERT(VARCHAR(15), tbl_competency_status.competency_status_time_stamp, 101),tbl_competency.competency_id FROM tbl_employees INNER JOIN tbl_competency_status ON tbl_employees.emp_id = tbl_competency_status.competency_status_emp_id INNER JOIN tbl_competency ON tbl_competency_status.competency_status_competency_id = tbl_competency.competency_id INNER JOIN tbl_competency_cluster ON tbl_competency.competency_cluster_id = tbl_competency_cluster.competency_cluster_id WHERE tbl_employees.emp_id="+employeeid+"", new RowMapper<Competency>(){
+		return template.query("SELECT TBL_EMPLOYEE.EMP_ID, TBL_COMPETENCY_CLUSTER.COMPETENCY_CLUSTER_NAME, TBL_COMPETENCY.COMPETENCY_NAME, "
+				+ "TBL_COMPETENCY.COMPETENCY_TYPE, TBL_COMPETENCY_STATUS.COMPETENCY_STATUS_COMPETENCY_SCORE,TBL_COMPETENCY_STATUS.COMPETENCY_STATUS_ID, "
+ + "CONVERT(VARCHAR(15), TBL_COMPETENCY_STATUS.COMPETENCY_STATUS_TIME_STAMP, 101),TBL_COMPETENCY.COMPETENCY_ID  "
+ + "FROM TBL_EMPLOYEE  "
+ + "INNER JOIN TBL_COMPETENCY_STATUS ON TBL_EMPLOYEE.EMP_ID = TBL_COMPETENCY_STATUS.COMPETENCY_STATUS_EMP_ID  "
+ + "INNER JOIN TBL_COMPETENCY ON TBL_COMPETENCY_STATUS.COMPETENCY_STATUS_COMPETENCY_ID = TBL_COMPETENCY.COMPETENCY_ID  "
+ + "INNER JOIN TBL_COMPETENCY_CLUSTER ON TBL_COMPETENCY.COMPETENCY_CLUSTER_ID = TBL_COMPETENCY_CLUSTER.COMPETENCY_CLUSTER_ID  "
+ + "WHERE TBL_EMPLOYEE.EMP_ID="+employeeid+"", new RowMapper<Competency>(){
 			public Competency mapRow(ResultSet rs, int row)  throws SQLException{
 				Competency e = new Competency();
 				e.setEmployee_id(rs.getInt(1));
@@ -62,7 +73,7 @@ public class EmployeesDao {
 		});
 	}
 	public List<Competency> getEmployeeid(int employeeid){
-		return template.query("SELECT emp_id FROM tbl_employees WHERE emp_id="+employeeid+"", new RowMapper<Competency>(){
+		return template.query("SELECT EMP_ID FROM TBL_EMPLOYEE WHERE EMP_ID="+employeeid+"", new RowMapper<Competency>(){
 			public Competency mapRow(ResultSet rs, int row)  throws SQLException{
 				Competency e = new Competency();
 				e.setEmployee_id(rs.getInt(1));
@@ -72,7 +83,7 @@ public class EmployeesDao {
 	}
 	
 	public List<Competency> getCompetency(){
-		return template.query("SELECT tbl_competency.competency_id, (tbl_competency_cluster.competency_cluster_name+' - '+ tbl_competency.competency_name+' - '+tbl_competency.competency_type)FROM   tbl_competency_cluster INNER JOIN tbl_competency ON tbl_competency_cluster.competency_cluster_id = tbl_competency.competency_cluster_id", new RowMapper<Competency>(){
+		return template.query("SELECT TBL_COMPETENCY.COMPETENCY_ID, (TBL_COMPETENCY_CLUSTER.COMPETENCY_CLUSTER_NAME+' - '+ TBL_COMPETENCY.COMPETENCY_NAME+' - '+TBL_COMPETENCY.COMPETENCY_TYPE)FROM   TBL_COMPETENCY_CLUSTER INNER JOIN TBL_COMPETENCY ON TBL_COMPETENCY_CLUSTER.COMPETENCY_CLUSTER_ID = TBL_COMPETENCY.COMPETENCY_CLUSTER_ID", new RowMapper<Competency>(){
 			public Competency mapRow(ResultSet rs, int row)  throws SQLException{
 				Competency e = new Competency();
 				e.setCompetency_id(rs.getInt(1));

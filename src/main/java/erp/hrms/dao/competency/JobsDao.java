@@ -33,7 +33,12 @@ public class JobsDao {
 	}
 	
 	public List<Competency> getJob(){
-		return template.query("SELECT tbl_job.job_id, tbl_job.job_title, tbl_departments.dept_name,CASE WHEN COUNT(tbl_job_competency.job_competency_id) = 0 THEN 0 ELSE COUNT(tbl_job_competency.job_competency_id) END  AS total_competency FROM tbl_job INNER JOIN tbl_departments ON tbl_job.job_dept_id = tbl_departments.dept_id FULL JOIN tbl_job_competency ON tbl_job.job_id = tbl_job_competency.job_competency_job_id GROUP BY tbl_job.job_id, tbl_job.job_title, tbl_departments.dept_name", new RowMapper<Competency>(){
+		return template.query("SELECT TBL_JOB.JOB_ID, TBL_JOB.JOB_NAME, TBL_DEPARTMENT.DEPT_NAME, "
++"CASE WHEN COUNT(TBL_JOB_COMPETENCY.JOB_COMPETENCY_ID) = 0 THEN 0  "
++"ELSE COUNT(TBL_JOB_COMPETENCY.JOB_COMPETENCY_ID) END  AS TOTAL_COMPETENCY  "
++"FROM TBL_JOB INNER JOIN TBL_DEPARTMENT ON TBL_JOB.DEPT_ID = TBL_DEPARTMENT.DEPT_ID  "
++"FULL JOIN TBL_JOB_COMPETENCY ON TBL_JOB.JOB_ID = TBL_JOB_COMPETENCY.JOB_COMPETENCY_JOB_ID  "
++"GROUP BY TBL_JOB.JOB_ID, TBL_JOB.JOB_NAME, TBL_DEPARTMENT.DEPT_NAME", new RowMapper<Competency>(){
 			public Competency mapRow(ResultSet rs, int row)  throws SQLException{
 				Competency c = new Competency();
 				c.setJob_id(rs.getInt(1));
@@ -45,7 +50,12 @@ public class JobsDao {
 		});
 	}
 	public List<Competency> getJobCompetency(int jobid){
-		return template.query("SELECT tbl_job_competency.job_competency_id, tbl_job.job_title, tbl_departments.dept_name,tbl_competency.competency_id, tbl_competency_cluster.competency_cluster_name, tbl_competency.competency_name, tbl_competency.competency_type, tbl_job_competency.job_competency_competency_level,tbl_job.job_id FROM tbl_job_competency INNER JOIN tbl_job ON tbl_job_competency.job_competency_job_id = tbl_job.job_id INNER JOIN tbl_departments ON tbl_job.job_dept_id = tbl_departments.dept_id INNER JOIN tbl_competency ON tbl_job_competency.job_competency_competency_id = tbl_competency.competency_id INNER JOIN tbl_competency_cluster ON tbl_competency.competency_cluster_id = tbl_competency_cluster.competency_cluster_id WHERE tbl_job.job_id="+jobid+"", new RowMapper<Competency>(){
+		return template.query("SELECT TBL_JOB_COMPETENCY.JOB_COMPETENCY_ID, TBL_JOB.JOB_NAME, TBL_DEPARTMENT.DEPT_NAME,TBL_COMPETENCY.COMPETENCY_ID, "
++"TBL_COMPETENCY_CLUSTER.COMPETENCY_CLUSTER_NAME, TBL_COMPETENCY.COMPETENCY_NAME, TBL_COMPETENCY.COMPETENCY_TYPE, "
++"TBL_JOB_COMPETENCY.JOB_COMPETENCY_COMPETENCY_LEVEL,TBL_JOB.JOB_ID FROM TBL_JOB_COMPETENCY "
++"INNER JOIN TBL_JOB ON TBL_JOB_COMPETENCY.JOB_COMPETENCY_JOB_ID = TBL_JOB.JOB_ID INNER JOIN TBL_DEPARTMENT ON TBL_JOB.DEPT_ID = TBL_DEPARTMENT.DEPT_ID "
++"INNER JOIN TBL_COMPETENCY ON TBL_JOB_COMPETENCY.JOB_COMPETENCY_COMPETENCY_ID = TBL_COMPETENCY.COMPETENCY_ID "
++"INNER JOIN TBL_COMPETENCY_CLUSTER ON TBL_COMPETENCY.COMPETENCY_CLUSTER_ID = TBL_COMPETENCY_CLUSTER.COMPETENCY_CLUSTER_ID WHERE TBL_JOB.JOB_ID="+jobid+"", new RowMapper<Competency>(){
 			public Competency mapRow(ResultSet rs, int row)  throws SQLException{
 				Competency c = new Competency();
 				c.setJobcompetency_id(rs.getInt(1));
@@ -62,7 +72,7 @@ public class JobsDao {
 		});
 	}
 	public List<Competency> getJobid(int jobid){
-		return template.query("SELECT job_id FROM tbl_job WHERE job_id="+jobid+"", new RowMapper<Competency>(){
+		return template.query("SELECT JOB_ID FROM TBL_JOB WHERE JOB_ID="+jobid+"", new RowMapper<Competency>(){
 			public Competency mapRow(ResultSet rs, int row)  throws SQLException{
 				Competency c = new Competency();
 				c.setJob_id(rs.getInt(1));
