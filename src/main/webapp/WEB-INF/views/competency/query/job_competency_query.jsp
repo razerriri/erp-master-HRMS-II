@@ -73,7 +73,7 @@
 												
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody style="font-size:80%;">
                                         <c:forEach var="c" items="${employeejobcompetencylist}">
                                             <tr role="row" class="odd">
                                            		<td>${c.employee_name}</td>

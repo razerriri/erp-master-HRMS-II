@@ -135,15 +135,15 @@ FROM   tbl_job_competency INNER JOIN
 				<reportElement style="Row" mode="Opaque" x="0" y="2" width="555" height="18" uuid="245cd446-f83b-43ee-853b-d0abd03bae3d"/>
 				<textField isStretchWithOverflow="true">
 					<reportElement style="Detail" positionType="Float" x="2" y="0" width="90" height="18" uuid="10e8fffc-c49a-404d-908f-6e203f9d0e24"/>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement style="Detail" positionType="Float" x="95" y="0" width="90" height="18" uuid="9f9312b6-f2e5-4d12-a436-43bf825decc6"/>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{department}]]></textFieldExpression>
 				</textField>
@@ -151,22 +151,22 @@ FROM   tbl_job_competency INNER JOIN
 					<reportElement x="188" y="0" width="90" height="18" uuid="89eb0c96-bbb9-49fe-a9de-5b8f4183fbcd">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b533a3d3-bbec-4b83-b1c3-9849605504fb"/>
 					</reportElement>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="12"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{cluster}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement style="Detail" positionType="Float" x="280" y="0" width="90" height="18" uuid="74c57604-525a-4c9b-be83-c598dc0935be"/>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{competency}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement style="Detail" positionType="Float" x="372" y="0" width="90" height="18" uuid="a6c8f6cb-d5c8-4c06-b740-a722a3e06475"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
 				</textField>
@@ -174,8 +174,8 @@ FROM   tbl_job_competency INNER JOIN
 					<reportElement x="463" y="0" width="90" height="18" uuid="e272b96b-dbda-4fa1-8bfd-782bd36f71db">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b533a3d3-bbec-4b83-b1c3-9849605504fb"/>
 					</reportElement>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="12"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{level}]]></textFieldExpression>
 				</textField>

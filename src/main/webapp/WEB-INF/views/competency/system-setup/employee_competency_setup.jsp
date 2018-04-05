@@ -53,7 +53,7 @@
                             <div class="portlet-title">
                                 <div class="caption">
                                     <i class="livicon" data-name="edit" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                                    Employee Competencies of (DELOS SANTOS, REY M.)
+                                    Employee Competencies 
                                 </div>
                             </div>
                             <div class="portlet-body">

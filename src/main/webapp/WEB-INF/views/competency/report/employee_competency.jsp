@@ -13,9 +13,8 @@
 	<% Connection conn=null;
 	try{
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-		conn=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ERP;integratedSecurity=true;");
-		
-		
+		conn=DriverManager.getConnection("jdbc:sqlserver://192.168.137.1:1433;databaseName=ERP;username=sa;password=abc123!;");
+						
 		File reportFile=new File(application.getRealPath("//reports//employeecompetency.jasper"));
 		byte[] bytes=JasperRunManager.runReportToPdf(reportFile.getPath(),null,conn);
 		

@@ -89,7 +89,7 @@
                                                 <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Cluster</th>
                                                 <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Competency</th>
                                                 <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Type</th>
-                                                <th class="sorting" tabindex="0" style="width:250px;" aria-controls="sample_editable_1" rowspan="1" colspan="1">Actions</th>
+                                                <th class="sorting" tabindex="0" style="width:160px;" aria-controls="sample_editable_1" rowspan="1" colspan="1">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -99,8 +99,8 @@
                                                 <td>${c.competency_name}</td> 
 												<td>${c.competency_type}</td>
                                                 <td align="center">
-                                                    <a class="btn btn-md btn-info" onClick="window.location = 'competency/view/'+${c.competency_id};"><span class="glyphicon glyphicon-search"></span> View</a>
-                                                
+                                                    <%-- <a class="btn btn-md btn-info" onClick="window.location = 'competency/view/'+${c.competency_id};"><span class="glyphicon glyphicon-search"></span> View</a>
+                                                 --%>
                                                     <a class="btn btn-md btn-warning" competency-id="${c.competency_id}" competency-name="${c.competency_name}" competency-type="${c.competency_type}" data-toggle="modal" data-target="#modalupdate"><span class="glyphicon glyphicon-edit"></span> Edit</a>
                                                                                           
                                             		<a class="btn btn-md btn-danger" competency-id="${c.competency_id}" cluster-id="${c.cluster_id}" data-toggle="modal" data-target="#modaldelete"><span class="glyphicon glyphicon-remove"></span> Delete</a>   
@@ -149,8 +149,8 @@
 												Type
 											</label>
 											<div class="col-md-9">
-												<form:select path="competency_type" id="competencytype" name="competencytype" class="form-control select2">
-													<form:option value=""></form:option>
+												<form:select path="competency_type" id="competencytype" name="competencytype" class="form-control select">
+													
 													<form:option value="Educational">Educational</form:option>
 													<form:option value="Non-Educational">Non-Educational</form:option>
 													<form:option value="Educational & Non-Educational">Educational & Non-Educational</form:option>		

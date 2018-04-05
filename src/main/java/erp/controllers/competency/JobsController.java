@@ -16,24 +16,24 @@ import erp.hrms.beans.Competency;
 
 
 @Controller
-@RequestMapping(value="job/view")
+@RequestMapping(value="/cms/job/view")
 public class JobsController {
 	
 	@Autowired
 	JobsDao jobsDao;
 	
-	@RequestMapping(value="cms/competency/delete/{jobcompetencyid}/{jobid}",method = RequestMethod.GET)
+	@RequestMapping(value="competency/delete/{jobcompetencyid}/{jobid}",method = RequestMethod.GET)
 	public ModelAndView delete(@PathVariable int jobcompetencyid,@PathVariable int jobid) {
 		jobsDao.delete(jobcompetencyid);
 		return new ModelAndView("redirect:/cms/job/view/"+jobid+"");
 	}
-	@RequestMapping(value="cms/competency/save", method = RequestMethod.POST)
+	@RequestMapping(value="competency/save", method = RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("competency") Competency competency) {
 		jobsDao.save(competency);
 		return new ModelAndView("redirect:/cms/job/view/"+competency.getJob_id()+"");
 	}
 	
-	@RequestMapping(value="cms/competency/update", method = RequestMethod.POST)
+	@RequestMapping(value="competency/update", method = RequestMethod.POST)
 	public ModelAndView update(@ModelAttribute("competency") Competency competency) {
 		jobsDao.update(competency);
 		return new ModelAndView("redirect:/cms/job/view/"+competency.getJob_id()+"");

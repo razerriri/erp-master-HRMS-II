@@ -30,7 +30,7 @@
             </section>
              <section class="content">
                 <!--main content-->
-				<div class="row">
+				<%-- <div class="row">
                     <div class="col-lg-12">
                         <!-- Stack charts strats here-->
                         <div class="panel panel-info" >
@@ -208,7 +208,7 @@
                         </div>
                     </div>       
                 </div>
-				
+				 --%>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-primary">

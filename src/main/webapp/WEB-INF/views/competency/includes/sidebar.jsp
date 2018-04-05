@@ -421,13 +421,13 @@
 								<li>
 									<a href="/erp/cms/jc">
 									<i class="fa fa-angle-double-right"></i>
-									<span class="title" style="font-size:90%;">Job Competency</span>
+									<span class="title" style="font-size:90%;">Job Required Competency</span>
 									</a>
 								</li>
 								<li>
 									<a href="/erp/cms/ejc">
 									<i class="fa fa-angle-double-right"></i>
-									<span class="title" style="font-size:80%;">Employee Competency</span>
+									<span class="title" style="font-size:80%;">Match Employee Job Competency</span>
 									</a>
 								</li>
 		                  </ul>

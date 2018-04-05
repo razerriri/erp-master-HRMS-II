@@ -153,15 +153,15 @@ WHEN tbl_competency_status.competency_status_competency_score ='Basic'
 				<reportElement style="Row" mode="Opaque" x="0" y="2" width="801" height="18" uuid="245cd446-f83b-43ee-853b-d0abd03bae3d"/>
 				<textField isStretchWithOverflow="true">
 					<reportElement style="Detail" positionType="Float" x="0" y="0" width="114" height="18" uuid="10e8fffc-c49a-404d-908f-6e203f9d0e24"/>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement style="Detail" positionType="Float" x="115" y="0" width="114" height="18" uuid="9f9312b6-f2e5-4d12-a436-43bf825decc6"/>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{department}]]></textFieldExpression>
 				</textField>
@@ -169,8 +169,8 @@ WHEN tbl_competency_status.competency_status_competency_score ='Basic'
 					<reportElement x="229" y="0" width="114" height="18" uuid="89eb0c96-bbb9-49fe-a9de-5b8f4183fbcd">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b533a3d3-bbec-4b83-b1c3-9849605504fb"/>
 					</reportElement>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="12"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{competency}]]></textFieldExpression>
 				</textField>
@@ -178,8 +178,8 @@ WHEN tbl_competency_status.competency_status_competency_score ='Basic'
 					<reportElement x="343" y="0" width="114" height="18" uuid="e458f9ad-347f-45e7-b8e7-d90ac161ed57">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b533a3d3-bbec-4b83-b1c3-9849605504fb"/>
 					</reportElement>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="12"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{level}]]></textFieldExpression>
 				</textField>
@@ -187,8 +187,8 @@ WHEN tbl_competency_status.competency_status_competency_score ='Basic'
 					<reportElement x="457" y="0" width="114" height="18" uuid="84caf7d7-67ab-423b-b226-975ea3c66656">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b533a3d3-bbec-4b83-b1c3-9849605504fb"/>
 					</reportElement>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="12"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{lname}]]></textFieldExpression>
 				</textField>
@@ -196,8 +196,8 @@ WHEN tbl_competency_status.competency_status_competency_score ='Basic'
 					<reportElement x="685" y="0" width="114" height="18" uuid="10389e0a-d6a6-4913-bcab-ab51b8c4432d">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b533a3d3-bbec-4b83-b1c3-9849605504fb"/>
 					</reportElement>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="12"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{score}]]></textFieldExpression>
 				</textField>
@@ -205,8 +205,8 @@ WHEN tbl_competency_status.competency_status_competency_score ='Basic'
 					<reportElement x="571" y="0" width="114" height="18" uuid="d287f7c4-530c-44ce-af5f-a117c5f0e3dd">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b533a3d3-bbec-4b83-b1c3-9849605504fb"/>
 					</reportElement>
-					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="12"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{fname}]]></textFieldExpression>
 				</textField>

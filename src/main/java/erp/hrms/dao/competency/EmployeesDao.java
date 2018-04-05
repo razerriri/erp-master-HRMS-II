@@ -33,17 +33,11 @@ public class EmployeesDao {
 	}
 	
 	public List<Competency> getEmployee(){
-		return template.query("SELECT TBL_EMPLOYEE.EMP_ID, (TBL_EMPLOYEE.EMP_LAST_NAME +' '+ TBL_EMPLOYEE.EMP_FIRST_NAME), "
-	+ "TBL_JOB.JOB_NAME, TBL_DEPARTMENT.DEPT_NAME FROM   TBL_EMPLOYEE "
-	+ "INNER JOIN REF_EMP_JOB ON TBL_EMPLOYEE.EMP_ID =  REF_EMP_JOB.EMP_ID " 
-	+ "INNER JOIN TBL_JOB ON REF_EMP_JOB.JOB_ID = TBL_JOB.JOB_ID "
-	+ "INNER JOIN TBL_DEPARTMENT ON TBL_JOB.DEPT_ID = TBL_DEPARTMENT.DEPT_ID ", new RowMapper<Competency>(){
+		return template.query("SELECT TBL_EMPLOYEE.EMP_ID, (TBL_EMPLOYEE.EMP_LAST_NAME +' '+ TBL_EMPLOYEE.EMP_FIRST_NAME) FROM   TBL_EMPLOYEE ", new RowMapper<Competency>(){
 			public Competency mapRow(ResultSet rs, int row)  throws SQLException{
 				Competency e = new Competency();
 				e.setEmployee_id(rs.getInt(1));
 				e.setEmployee_name(rs.getString(2));
-				e.setJob_name(rs.getString(3));
-				e.setDepartment_name(rs.getString(4));
 				return e;
 			}
 		});

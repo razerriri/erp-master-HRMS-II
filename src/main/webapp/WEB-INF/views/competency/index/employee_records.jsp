@@ -64,18 +64,20 @@
                                         <thead>
                                             <tr role="row">
                                                 <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Employee</th>
-                                                <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Job</th>
+                                                <!-- <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Job</th>
                                                 <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Department</th>                                               
+                                                 -->
                                                 <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width:100px;">Actions</th>
+                                           
                                             </tr>
                                         </thead>
                                         <tbody>
                                              <c:forEach var="e" items="${employeelist}">
                                             <tr role="row" class="odd">
                                                 <td>${e.employee_name}</td>
-                                                <td>${e.job_name}</td>
+                                               <%--  <td>${e.job_name}</td>
                                                 <td>${e.department_name}</td>
-                                             
+                                              --%>
                                                 <td align="center">
                                                     <a class="btn btn-md btn-info" onClick="window.location = 'employee/view/'+${e.employee_id};"><span class="glyphicon glyphicon-search"></span> View</a>                                              
                                           	    </td>

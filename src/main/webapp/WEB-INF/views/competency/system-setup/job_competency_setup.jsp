@@ -92,10 +92,10 @@
                                                 <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Competency</th>
                                                 <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Type</th>             
                                                 <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Level</th>
-                                                <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width:160px;">Actions</th>             
+                                                <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width:180px;">Actions</th>             
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody style="font-size:80%;">
                                             <c:forEach var="c" items="${jobcompetencylist}">
                                             <tr role="row" class="odd">                              
                                                 <td>${c.job_name}</td>
