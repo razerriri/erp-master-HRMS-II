@@ -35,6 +35,17 @@ public class CompetencyController {
 		ModelAndView mav = new ModelAndView("competency/index/cms");
 		return mav;
 	}
+	/*@RequestMapping(value= {"/cms/succesion/succession-plan"})
+	public ModelAndView succ_plan() {
+		ModelAndView mav = new ModelAndView("competency/succession/succession-plan");
+		return mav;
+	}
+	@RequestMapping(value= {"/cms/succesion/succession-recommendation"})
+	public ModelAndView succ_rec() {
+		ModelAndView mav = new ModelAndView("competency/succession/succession-recommendation");
+		return mav;
+	}*/
+	
 	
 	@RequestMapping(value= {"/cms/report/competency-record"})
 	public ModelAndView cr() {

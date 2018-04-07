@@ -388,11 +388,26 @@
                            <span class="title">Training Management</span>
                            </a>
                         </li>
-                        <li>
-                           <a href="ss_manage evaluators.html">
+                         <li>
+                           <a href="#">
                            <i class="fa fa-angle-double-right"></i>
                            <span class="title">Succession Planning</span>
                            </a>
+                            <ul class="sub-menu">
+	                           <li class="">
+									<a href="/erp/succession/succession-plan">		
+									<i class="fa fa-angle-double-right"></i>
+									<span class="title">Succession Plan</span>
+									</a>
+								</li>
+								 <li class="">
+									<a href="/erp/succession/succession-recommendation">		
+									<i class="fa fa-angle-double-right"></i>
+									<span class="title">Succession Recommendation</span>
+									</a>
+								</li>
+						</ul>
+                           
                         </li>
                         <li>
                            <a href="/erp/hrms/hr_performance_management/admin_dashboard/">

@@ -383,16 +383,31 @@
                            </a>
                         </li>
                         <li>
-                           <a href="ss_manage evaluators.html">
+                           <a href="">
                            <i class="fa fa-angle-double-right"></i>
                            <span class="title">Training Management</span>
                            </a>
                         </li>
                         <li>
-                           <a href="ss_manage evaluators.html">
+                           <a href="#">
                            <i class="fa fa-angle-double-right"></i>
                            <span class="title">Succession Planning</span>
                            </a>
+                            <ul class="sub-menu">
+	                           <li class="">
+									<a href="/erp/succession/succession-plan">		
+									<i class="fa fa-angle-double-right"></i>
+									<span class="title">Succession Plan</span>
+									</a>
+								</li>
+								 <li class="">
+									<a href="/erp/succession/succession-recommendation">		
+									<i class="fa fa-angle-double-right"></i>
+									<span class="title">Succession Recommendation</span>
+									</a>
+								</li>
+						</ul>
+                           
                         </li>
                         <li>
                            <a href="/erp/hrms/hr_performance_management/admin_dashboard/">
@@ -421,13 +436,13 @@
 								<li>
 									<a href="/erp/cms/jc">
 									<i class="fa fa-angle-double-right"></i>
-									<span class="title" style="font-size:90%;">Job Competency</span>
+									<span class="title" style="font-size:90%;">Job Required Competency</span>
 									</a>
 								</li>
 								<li>
 									<a href="/erp/cms/ejc">
 									<i class="fa fa-angle-double-right"></i>
-									<span class="title" style="font-size:80%;">Employee Competency</span>
+									<span class="title" style="font-size:80%;">Match Employee Job Competency</span>
 									</a>
 								</li>
 		                  </ul>

@@ -91,49 +91,49 @@ WHEN tbl_competency_status.competency_status_competency_score ='Basic'
 				<staticText>
 					<reportElement x="0" y="3" width="114" height="19" forecolor="#FFFFFF" uuid="9b20499c-e522-4397-ba51-806996034148"/>
 					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="14" isBold="true" isUnderline="true"/>
+						<font fontName="Calibri" size="12" isBold="true" isUnderline="true"/>
 					</textElement>
 					<text><![CDATA[Job]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="115" y="3" width="114" height="19" forecolor="#FFFFFF" uuid="fbade328-e889-4034-85c2-00a274c51b98"/>
 					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="14" isBold="true" isUnderline="true"/>
+						<font fontName="Calibri" size="12" isBold="true" isUnderline="true"/>
 					</textElement>
 					<text><![CDATA[Department]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="229" y="3" width="114" height="19" forecolor="#FFFFFF" uuid="994468bf-cd9f-45f6-9611-6199d17cb9de"/>
 					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="14" isBold="true" isUnderline="true"/>
+						<font fontName="Calibri" size="12" isBold="true" isUnderline="true"/>
 					</textElement>
 					<text><![CDATA[Competency]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="343" y="3" width="114" height="19" forecolor="#FFFFFF" uuid="83f1b057-8ad9-4d61-bac3-d377eeec1877"/>
 					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="14" isBold="true" isUnderline="true"/>
+						<font fontName="Calibri" size="12" isBold="true" isUnderline="true"/>
 					</textElement>
 					<text><![CDATA[Level]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="457" y="3" width="114" height="19" forecolor="#FFFFFF" uuid="08c7eece-bbf6-412a-a9a7-f9fea03f8970"/>
 					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="14" isBold="true" isUnderline="true"/>
+						<font fontName="Calibri" size="12" isBold="true" isUnderline="true"/>
 					</textElement>
 					<text><![CDATA[Last name]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="685" y="3" width="114" height="19" forecolor="#FFFFFF" uuid="7f7fbbb0-a74a-4df0-ae99-4ceb251a5170"/>
 					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="14" isBold="true" isUnderline="true"/>
+						<font fontName="Calibri" size="12" isBold="true" isUnderline="true"/>
 					</textElement>
 					<text><![CDATA[Remarks]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="571" y="3" width="114" height="19" forecolor="#FFFFFF" uuid="329491bf-ee82-4693-a355-831d91f547cb"/>
 					<textElement textAlignment="Center">
-						<font fontName="Calibri" size="14" isBold="true" isUnderline="true"/>
+						<font fontName="Calibri" size="12" isBold="true" isUnderline="true"/>
 					</textElement>
 					<text><![CDATA[First name]]></text>
 				</staticText>

@@ -12,18 +12,23 @@
    <!-- Mapping of static files -->
    <mvc:resources mapping="/resources/**" location="/resources/" />
    <mvc:annotation-driven />
-   <!-- <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-      <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-      <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=ERP2;" />
-      <property name="username" value="sa" />
-      <property name="password" value="abc123!" />
-   </bean> -->
-   
+  <!--  
    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+      <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=ERP;integratedSecurity=true;" />
+   </bean>
+    -->
+  <!--  <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
       <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
       <property name="url" value="jdbc:sqlserver://192.168.137.1:1433;databaseName=ERP" />
       <property name="username" value="sa"/>
        <property name="password" value="abc123!"/>
+   </bean> -->
+   <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+      <property name="url" value="jdbc:sqlserver://169.254.48.63:1433;databaseName=ERP" />
+      <property name="username" value="sa"/>
+      <property name="password" value="abc123!"/>
    </bean>
    
    
