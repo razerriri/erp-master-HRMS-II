@@ -21,7 +21,7 @@
     <head>
          <%@include file="../includes/header.jsp" %>
       </head>
-      <div class="wrapper row-offcanvas row-offcansevas-left">
+      <div class="wrapper row-offcanvas row-offcanvas-left">
          <%@include file="../includes/sidebar.jsp" %>
 		 
         <!-- Right side column. Contains the navbar and content of the page -->
@@ -40,7 +40,7 @@
                     <li>
                         <a href="#">System Configuration</a>
                     </li>
-                    <li class="active">Job Competencies</li>
+                    <li class="active">Training Competencies</li>
                 </ol>
             </section>
             <!--section ends-->
@@ -53,7 +53,7 @@
                             <div class="portlet-title">
                                 <div class="caption">
                                     <i class="livicon" data-name="edit" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                                    Job Competencies 
+                                    Training Competencies 
                                 </div>
                             </div>
                             <div class="portlet-body">
@@ -86,9 +86,8 @@
                                     <table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_editable_1" role="grid">
                                         <thead>
                                             <tr role="row">
-                                                <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Job Title</th>
-												<th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Department</th>
-                                                <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Cluster</th>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Training Title</th>
+												<th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Cluster</th>
                                                 <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Competency</th>
                                                 <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Type</th>             
                                                 <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1">Level</th>
@@ -96,17 +95,16 @@
                                             </tr>
                                         </thead>
                                         <tbody style="font-size:80%;">
-                                            <c:forEach var="c" items="${jobcompetencylist}">
+                                            <c:forEach var="c" items="${trainingcompetencylist}">
                                             <tr role="row" class="odd">                              
-                                                <td>${c.job_name}</td>
-                                                <td>${c.department_name}</td>
+                                                <td>${c.training_name}</td>
                                                 <td>${c.cluster_name}</td>                                               
                                                 <td>${c.competency_name}</td>
                                                 <td>${c.competency_type}</td>
                                                 <td>${c.required_level}</td>
                                                 <td align="center">                                   
-                                                    <a class="btn btn-md btn-warning" job-competency-id="${c.jobcompetency_id}" competency-id="${c.competency_id}" required-level="${c.required_level}" data-toggle="modal" data-target="#modalupdate"><span class="glyphicon glyphicon-edit"></span> Edit</a>       
-                                            		<a class="btn btn-md btn-danger" job-competency-id="${c.jobcompetency_id}" job-id="${c.job_id}" data-toggle="modal" data-target="#modaldelete"><span class="glyphicon glyphicon-remove"></span> Delete</a>    	
+                                                    <a class="btn btn-md btn-warning" training-competency-id="${c.trainingcompetency_id}" competency-id="${c.competency_id}" required-level="${c.required_level}" data-toggle="modal" data-target="#modalupdate"><span class="glyphicon glyphicon-edit"></span> Edit</a>       
+                                            		<a class="btn btn-md btn-danger" training-competency-id="${c.trainingcompetency_id}" training-id="${c.training_id}" data-toggle="modal" data-target="#modaldelete"><span class="glyphicon glyphicon-remove"></span> Delete</a>    	
                                                 </td>
                                             </tr>
 											</c:forEach>
@@ -129,8 +127,8 @@
                             </div>
                            	    <div class="row">
                            	    <br/>
-                           	     <c:forEach var="c" items="${job_id}">                                  
-                           		 <form:hidden path="job_id" id="jobid"  value="${c.job_id}"></form:hidden>                  
+                           	     <c:forEach var="c" items="${training_id}">                                  
+                           		 <form:hidden path="training_id" id="trainingid"  value="${c.training_id}"></form:hidden>                  
 								</c:forEach>
 								<div class="col-md-12">        
 										<div class="form-group">
@@ -184,11 +182,11 @@
                             </div>
                             <div class="modal-body">
                             						 
-                         		<c:forEach var="c" items="${job_id}">                                  
-                           		 <form:hidden path="job_id" id="jobid"  value="${c.job_id}"></form:hidden>                  
+                         		<c:forEach var="c" items="${training_id}">                                  
+                           		 <form:hidden path="training_id" id="trainingid"  value="${c.training_id}"></form:hidden>                  
 								</c:forEach>
 								
-						 		<form:hidden path="jobcompetency_id" id="jobcompetencyid" name="jobcompetencyid" ></form:hidden>
+						 		<form:hidden path="trainingcompetency_id" id="trainingcompetencyid" name="trainingcompetencyid" ></form:hidden>
                                 <div class="row">
 								<div class="col-md-12">        
 										<div class="form-group">
@@ -278,11 +276,11 @@
         	  var opener=e.relatedTarget;//this holds the element who called the modal
         	   
         	  //we get details from attributes
-        	  var jobcompetencyid=$(opener).attr('job-competency-id');
-        	  var jobid=$(opener).attr('job-id');
+        	  var trainingcompetencyid=$(opener).attr('training-competency-id');
+        	  var trainingid=$(opener).attr('training-id');
         	  
         	  document.getElementById("deletebutton").onclick = function () {
-      	    	window.location = 'competency/delete/'+jobcompetencyid+'/'+jobid;
+      	    	window.location = 'competency/delete/'+trainingcompetencyid+'/'+trainingid;
       	   	  };
       	    
         	});
@@ -294,12 +292,12 @@
         	  var opener=e.relatedTarget;//this holds the element who called the modal
         	   
         	  //we get details from attributes
-        	  var jobcompetencyid=$(opener).attr('job-competency-id');
+        	  var trainingcompetencyid=$(opener).attr('training-competency-id');
         	  var competencyid=$(opener).attr('competency-id');
         	  var requiredlevel=$(opener).attr('required-level');
 
         	  //set what we got to our form
-       	    $('#updateForm').find('[id="jobcompetencyid"]').val(jobcompetencyid);
+       	    $('#updateForm').find('[id="trainingcompetencyid"]').val(trainingcompetencyid);
             $('#updateForm').find('[id="competencyid"]').val(competencyid);
             $('#updateForm').find('[id="requiredlevel"]').val(requiredlevel);
           	

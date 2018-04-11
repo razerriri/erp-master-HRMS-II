@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import erp.hrms.dao.competency.ClusterDao;
+import erp.hrms.dao.competency.CourseDao;
 import erp.hrms.dao.competency.EJCDao;
 import erp.hrms.dao.competency.EmployeesDao;
 import erp.hrms.dao.competency.JCDao;
 import erp.hrms.dao.competency.JobsDao;
+import erp.hrms.dao.competency.TrainingDao;
 import erp.hrms.beans.Competency;
 
 @Controller
@@ -28,6 +30,10 @@ public class CompetencyController {
 	JobsDao jobsDao;
 	@Autowired
 	JCDao jcDao;
+	@Autowired
+	CourseDao courseDao;
+	@Autowired
+	TrainingDao trainingDao;
 	
 	
 	@RequestMapping(value= {"/cms"})
@@ -35,17 +41,7 @@ public class CompetencyController {
 		ModelAndView mav = new ModelAndView("competency/index/cms");
 		return mav;
 	}
-	/*@RequestMapping(value= {"/cms/succesion/succession-plan"})
-	public ModelAndView succ_plan() {
-		ModelAndView mav = new ModelAndView("competency/succession/succession-plan");
-		return mav;
-	}
-	@RequestMapping(value= {"/cms/succesion/succession-recommendation"})
-	public ModelAndView succ_rec() {
-		ModelAndView mav = new ModelAndView("competency/succession/succession-recommendation");
-		return mav;
-	}*/
-	
+
 	
 	@RequestMapping(value= {"/cms/report/competency-record"})
 	public ModelAndView cr() {
@@ -90,6 +86,14 @@ public class CompetencyController {
 		mav.addObject("employeelist",employeelist);
 		return mav;
 	}
+	
+	@RequestMapping(value= {"/cms/training"})
+	public ModelAndView training_records() {
+		List<Competency> traininglist = trainingDao.getTraining();
+		ModelAndView mav = new ModelAndView("competency/index/training_records");
+		mav.addObject("traininglist",traininglist);
+		return mav;
+	}
 	/*EMPLOYEE JOB COMPETENCY QUERY*/
 	@RequestMapping(value= {"/cms/ejc"})
 	public ModelAndView employee_job_competency_query() {
@@ -113,6 +117,27 @@ public class CompetencyController {
 		return mav;
 	}
 	
+	@RequestMapping(value= {"/cms/course"})
+	public ModelAndView course_records() {
+		List<Competency> courselist = courseDao.getCourse();
+		ModelAndView mav = new ModelAndView("competency/index/course_records");
+		mav.addObject("courselist",courselist);
+		return mav;
+	}
+	
+	@RequestMapping(value="/cms/course/view/{courseid}",method = RequestMethod.GET)
+	public ModelAndView getcoursecomp(@PathVariable int courseid) {
+		List<Competency> coursecompetencylist = courseDao.getCourseCompetency(courseid);
+		List<Competency> competencylist = employeesDao.getCompetency();
+		List<Competency> course_id = courseDao.getCourseid(courseid);
+		ModelAndView mav = new ModelAndView("competency/system-setup/course_competency_setup");
+		mav.addObject("coursecompetencylist",coursecompetencylist);
+		mav.addObject("competencylist",competencylist);
+		mav.addObject("course_id",course_id);
+		mav.addObject("competency", new Competency());
+		return mav;
+	}
+	
 	@RequestMapping(value="/cms/job/view/{jobid}",method = RequestMethod.GET)
 	public ModelAndView getjobcomp(@PathVariable int jobid) {
 		List<Competency> jobcompetencylist = jobsDao.getJobCompetency(jobid);
@@ -122,6 +147,19 @@ public class CompetencyController {
 		mav.addObject("jobcompetencylist",jobcompetencylist);
 		mav.addObject("competencylist",competencylist);
 		mav.addObject("job_id",job_id);
+		mav.addObject("competency", new Competency());
+		return mav;
+	}
+	
+	@RequestMapping(value="/cms/training/view/{trainingid}",method = RequestMethod.GET)
+	public ModelAndView gettraincomp(@PathVariable int trainingid) {
+		List<Competency> trainingcompetencylist = trainingDao.getTrainingCompetency(trainingid);
+		List<Competency> competencylist = employeesDao.getCompetency();
+		List<Competency> training_id = trainingDao.getTrainingid(trainingid);
+		ModelAndView mav = new ModelAndView("competency/system-setup/training_competency_setup");
+		mav.addObject("trainingcompetencylist",trainingcompetencylist);
+		mav.addObject("competencylist",competencylist);
+		mav.addObject("training_id",training_id);
 		mav.addObject("competency", new Competency());
 		return mav;
 	}

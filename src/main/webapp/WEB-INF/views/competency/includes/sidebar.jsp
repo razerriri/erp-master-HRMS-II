@@ -49,6 +49,12 @@
 		                           </a>
                      	 	   </li>
                      	 	   <li>
+		                           <a href="/erp/cms/course">
+		                           <i class="fa fa-angle-double-right"></i>
+		                           <span class="title" style="font-size:80%;">Course Competency</span>
+		                           </a>
+                     	 	   </li>
+                     	 	   <li>
 		                           <a href="/erp/cms/cluster">
 		                           <i class="fa fa-angle-double-right"></i>
 		                           <span class="title" style="font-size:80%;">Cluster Competency</span>
@@ -58,6 +64,12 @@
 		                           <a href="/erp/cms/employee">
 		                           <i class="fa fa-angle-double-right"></i>
 		                           <span class="title" style="font-size:80%;">Employee Competency</span>
+		                           </a>
+                     	 	   </li>
+                     	 	   <li>
+		                           <a href="/erp/cms/training">
+		                           <i class="fa fa-angle-double-right"></i>
+		                           <span class="title" style="font-size:80%;">Training Competency</span>
 		                           </a>
                      	 	   </li>
                            </ul>
