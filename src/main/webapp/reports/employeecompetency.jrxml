@@ -48,6 +48,7 @@ WHEN tbl_competency_status.competency_status_competency_score ='Basic'
 	 INNER JOIN REF_EMP_JOB ON TBL_JOB.JOB_ID =  REF_EMP_JOB.JOB_ID
 INNER JOIN TBL_EMPLOYEE ON REF_EMP_JOB.EMP_ID = TBL_EMPLOYEE.EMP_ID
 	  LEFT JOIN tbl_competency_status ON tbl_job_competency.job_competency_competency_id = tbl_competency_status.competency_status_competency_id  
+	  AND TBL_EMPLOYEE.EMP_ID= TBL_COMPETENCY_STATUS.COMPETENCY_STATUS_EMP_ID
 	  inner JOIN tbl_competency ON tbl_job_competency.job_competency_competency_id = tbl_competency.competency_id 
 	  INNER JOIN tbl_department ON tbl_job.dept_id = tbl_department.dept_id]]>
 	</queryString>

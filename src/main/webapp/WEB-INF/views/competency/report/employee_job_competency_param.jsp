@@ -27,8 +27,9 @@ HRMS 2 | Competency Management</head>
 		int empid=Integer.parseInt(request.getParameter("employee_id"));
 		int jobid=Integer.parseInt(request.getParameter("job_id"));
 		System.out.println(empid);
-		 conn=DriverManager.getConnection("jdbc:sqlserver://192.168.43.215:1433;databaseName=ERP;username=sa;password=abc123!;");
-	 		
+		/*  conn=DriverManager.getConnection("jdbc:sqlserver://192.168.43.215:1433;databaseName=ERP;username=sa;password=abc123!;"); */
+		 conn=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ERP;integratedSecurity=true;");
+			
 			/* conn=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ERP;integratedSecurity=true;"); */
 			/* conn=DriverManager.getConnection("jdbc:sqlserver://192.168.137.1:1433;databaseName=ERP;username=sa;password=abc123!;"); */
 		File reportFile=new File(application.getRealPath("//reports//employeejobcompetencyparam.jasper"));

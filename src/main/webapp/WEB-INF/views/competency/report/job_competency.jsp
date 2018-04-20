@@ -13,8 +13,10 @@
 	<% Connection conn=null;
 	try{
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-		 conn=DriverManager.getConnection("jdbc:sqlserver://192.168.43.215:1433;databaseName=ERP;username=sa;password=abc123!;");
-		 		
+		conn=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ERP;integratedSecurity=true;");
+		
+		 /* conn=DriverManager.getConnection("jdbc:sqlserver://192.168.43.215:1433;databaseName=ERP;username=sa;password=abc123!;");
+		 */ 		
 		/* conn=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ERP;integratedSecurity=true;"); */
 		/* conn=DriverManager.getConnection("jdbc:sqlserver://192.168.137.1:1433;databaseName=ERP;username=sa;password=abc123!;"); */
 		File reportFile=new File(application.getRealPath("//reports//jobcompetency.jasper"));
